@@ -90,9 +90,6 @@ function createUserCard(user) {
 
         <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
             <span class="text-xs text-gray-500">ID: ${user.id}</span>
-            <button class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-3 rounded-full transition">
-                <i class="fas fa-user-plus mr-1"></i> Conectar
-            </button>
         </div>
     `;
 
