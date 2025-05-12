@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Usuários</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+            color: white;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #3a7bd5;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .map-link {
+            transition: all 0.3s ease;
+        }
+        
+        .map-link:hover {
+            color: #3a7bd5;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Perfis de Usuário</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Navegue e conheça as pessoas</p>
+            
+            <div class="mt-8 flex justify-center">
+                <button id="fetchUsers" class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center">
+                    <i class="fas fa-users mr-2"></i> Carregar Usuários
+                </button>
+            </div>
+        </header>
+        
+        <div id="loadingIndicator" class="text-center hidden py-12">
+            <div class="loading mx-auto"></div>
+            <p class="mt-4 text-gray-600">Carregando Dados...</p>
+        </div>
+        
+        <div id="userContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- User cards will be inserted here by JavaScript -->
+            
+            <!-- Sample card (will be replaced with actual data) -->
+            <div class="card p-6">
+                <div class="text-center mb-6">
+                    <div class="user-avatar mb-4">?</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Nenhum Usuário por aqui ainda</h3>
+                    <p class="text-gray-500">Clique no botão acima para carregar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="alimento.js"></script>
+</body>
+</html>
